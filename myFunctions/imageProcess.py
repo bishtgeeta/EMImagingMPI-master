@@ -260,7 +260,7 @@ def regionProps(bImg, gImg=0, structure=[[1,1,1],[1,1,1],[1,1,1]], area=False, p
                 circlarity=1-(circularity-1)
             dictionary['circularity'].append(circlarity)
         if (orientation == True):
-            regions = regionprops(bImgLabelN.astype('uint8'))
+            regions = measure.regionprops(bImgLabelN.astype('uint8'))
             for props in regions:
                 dictionary['orientation'].append(numpy.rad2deg(props.orientation))
         if (pixelList == True):
